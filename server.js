@@ -6,9 +6,6 @@ const passwordHash = require("password-hash");
 const session = require("express-session");
 const multer = require('multer');
 
-
-
-
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname, "src", "static", "images", "clothes"))
@@ -24,12 +21,6 @@ var storage = multer.diskStorage({
 //Mongo
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
-//End of Mongo Dependancies
-
-//IVE INSTALL MULTER WATCH THE REST OF THE VIDEO
-//MADE BY ACADEMIND ON HOW TO UPLOAD IMAGES IN NODE.JS
-//IMPORTANT!!!
-
            
 let status = {
     status: "null"
@@ -42,8 +33,6 @@ let user_inputs = {
 }
 
 var result_array = [];
-
-// const mongodb_atlas_connection = 'mongodb+srv://haseeb:khan123@dentalcluster-sdul0.mongodb.net/test?retryWrites=true&w=majority';
 
 let session_status = {
     status: "not verified",
@@ -60,7 +49,7 @@ const connection = mongoose.connect('mongodb+srv://admin-kashyap:kingman123...@c
 
 
 
-            //Shopping Cart Schema
+//Shopping Cart Schema
 const ShoppingCartSchema = new mongoose.Schema({
     name: String,
     qty: { type: Number, default: 1 },
@@ -72,8 +61,7 @@ const ShoppingCartSchema = new mongoose.Schema({
 
 const Cart = mongoose.model("Cart", ShoppingCartSchema);
 
-            //PRODUCTS SCHEMA
-
+//PRODUCTS SCHEMA
 const ProductsSchema = new mongoose.Schema({
     name: String,
     description: String,
@@ -87,9 +75,7 @@ const ProductsSchema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", ProductsSchema);
 
-            //PRODUCTS SCHEMA END
-
-                //USER SCHEMA
+ //USER SCHEMA
 const UserSchema = new mongoose.Schema({
     username: String,
     password: String,
@@ -100,9 +86,8 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", UserSchema);
-            // USER SHCHEMA AND MODEL END
 
-            // ORDERS SCHEMA 
+ // ORDERS SCHEMA 
 const OrderSchema = new mongoose.Schema({
     user_name: String,
     amount_paid: Number,
@@ -110,10 +95,7 @@ const OrderSchema = new mongoose.Schema({
     account_holder_id: String
 })
 
-
 const Order = mongoose.model("order", OrderSchema);
-
-
 
 // //Final Price for each user Schema
 const FinalPriceSchema = new mongoose.Schema({
@@ -123,9 +105,8 @@ const FinalPriceSchema = new mongoose.Schema({
 
 const FinalPrice = mongoose.model("finalPrice", FinalPriceSchema);
 
-
 app.use(express.static(path.join(__dirname, "build")));
-app.use(session({secret: "TEO IS THE BEST ELLO SECRET KEY", 
+app.use(session({secret: "Our Little Secret", 
 cookie: { maxAge: 8*60*60*1000 },
 resave: false ,
 saveUninitialized: true, 
@@ -133,9 +114,6 @@ store: new MongoStore({mongooseConnection: mongoose.connection})
 }))
 
 app.use(bodyParser.urlencoded({extended: true}));
-
-
-
 
 app.get("/people", (req,res) => {
     let people = {
@@ -147,7 +125,6 @@ app.get("/people", (req,res) => {
 
 app.get("/redirect", function(req,res) {
     res.send(status);
-
 });
 
 app.get("/status", function(req,res) {
@@ -158,10 +135,7 @@ app.get("/user-input", (req,res) => {
     res.send(user_inputs);
 })
 
-// result.username.toLowerCase() === username.toLowerCase() &&  
 //Login route
-
-
 let ssn;
 
 app.post("/login", (req,res) => {
@@ -199,14 +173,9 @@ app.post("/login", (req,res) => {
                 res.redirect("/login");
             }
         } else {
-            //If no entry set status to no entry so that error message can be displayed
             status.status = "no entry found";
-            //redirect to login route so that user can try again
             res.redirect("/login");
-
         }
-
-
     });
 });
 
@@ -232,15 +201,12 @@ app.post("/admin/add-product", upload.single('image') ,function(req,res) {
         image: image,
     });
 
-
     if(product.save()) {
-
         res.redirect("/admin/add-product");
 
     } else {
         res.redirect("/admin/add-product");
     }
-
 });
 
 //Show Users
@@ -252,34 +218,29 @@ app.get("/admin/users/all", function(req,res) {
 
 //Show Products
 app.get("/admin/products/show-all", function(req,res) {
-    
     Product.find(function(err, result) {
         res.send(result);
     });
 
 });
-
 //Show Coats Specifically
 app.get("/products/coat", (req,res) => {
     Product.find({product_category: "coat"}, (err,result) => {
         res.send(result);
     });
 })
-
 //Show Shirts Specifically
 app.get("/products/shirt", (req,res) => {
     Product.find({product_category: "shirt"}, (err,result) => {
         res.send(result);
     })
 })
-
 //Show Shoes Specifially
 app.get("/product/shoe", (req,res) => {
     Product.find({product_category: "shoe"}, (err, result) => {
         res.send(result);
     })
 })
-
 //Show Watch Specifically
 app.get("/product/watch", (req,res) => {
     Product.find({product_category: "watch"}, (err, result) => {
@@ -308,12 +269,12 @@ app.post("/add-to-cart/:item_id", (req,res) => {
                     cartItem.save();
                     res.send(true);
                 } else {
-                    res.send("Sorry you have already added this item to cart")
+                    res.send("Item already added!!!")
                 }
            })
 
         } else {
-            res.send("No Such Product exists in database");
+            res.send("Product not found!!!");
         }
     })
     
@@ -344,11 +305,6 @@ app.post("/products/:choice", (req,res) => {
     });
 
 });
-
-
-
-
-
 
 //Shopping Cart
 app.get("/shopping-cart/all-items", (req,res) => {
@@ -382,33 +338,9 @@ app.post("/shopping-cart/delete-item/:id", (req,res) => {
 app.post("/changeFinalPrice/:finalPrice", (req,res) => {
     let finalPrice = req.params.finalPrice;
 
-    //STAYS COMMENTED OUT
-    // FinalPrice.find({ account_holder_id: ssn.user_id, finalPrice: finalPrice },(err,result) => {
-    //     if(result) {
-
-    //         FinalPrice.findOneAndUpdate({_id: result._id, account_holder_id: ssn.user_id, })
-
-
-    // } else {
-    //     const newFinalPrice = new FinalPrice({
-
-    //     });
-
-    //     if(ssn) {
-    //     newFinalPrice.save();
-    //     } else {
-
-    //     }
-
-    // }
-    // })
-    //STAYS COMMENTED OUT
-
     FinalPrice.findOneAndUpdate({account_holder_id: ssn.user_id, finalPrice: finalPrice}, {finalPrice: finalPrice}, { new: true, upsert: true }, (err,result) => {
         res.send(result);
     });
-
-
 })
 
 app.post("/eraseCart", (req,res) => {
@@ -418,7 +350,6 @@ app.post("/eraseCart", (req,res) => {
         })
     }
 })
-
 
 app.get("/db-count/cart", function(req,res) {
     let db_name = req.params.name;
@@ -431,7 +362,7 @@ app.get("/db-count/cart", function(req,res) {
 
 })
 
-                //DB Count Routes
+//DB Count Routes
 // Count Cart Items
 app.get("/dbCount/cart", (req,res) => {
 
@@ -447,9 +378,7 @@ app.get("/dbCount/products", (req,res) => {
     })
 })
 
-
 //Delete User 
-
 app.post("/deleteUser/:id", (req,res) => {
     let userId = req.params.id;
     User.deleteOne({_id: userId}, (err,result) => {
@@ -486,8 +415,6 @@ app.post("/create-an-account", (req,res) => {
         status.status="new account created";
         res.redirect("/login");
     }
-
-    
 }); 
 
 app.get("*", function(req, res) {
@@ -496,6 +423,6 @@ app.get("*", function(req, res) {
 
 let port = process.env.PORT;
 
-app.listen(port || 5000, () => {
-    console.log("Server has been started successfully " + port);
+app.listen( 5000, () => {
+    console.log("Server successfully started at port :  " + port);
 });

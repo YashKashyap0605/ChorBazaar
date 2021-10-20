@@ -1,11 +1,3 @@
-//Stuff to do
-/*
-    1). So you have to start sessions no nobody can just go to the home route
-    2). Make sure the session store is not memory store there is a mongodb styor inside of express-session docs
-    3). FOCUS!!!
-
-            //TRY AGAIN WITH THE ERROR MESSAGE DISAPPEAR FUNCTION LATER
- */
 
 import React, { useState } from "react";
 import "../../static/css/Login.css";
@@ -48,7 +40,7 @@ const Login = (props) => {
         let key = data.status;
         switch (key) {
             case "no entry found":
-                    setErrorMessage("Sorry your login credentials didn't match up with our records. Please try again or create an account");
+                    setErrorMessage("Invalid username or password");
                     setColor("danger");
                     error_message_appear();
                     error_message_disappear();
@@ -59,13 +51,13 @@ const Login = (props) => {
                 error_message.style.display = "none";
                 break;
             case "invalid":
-                setErrorMessage("Your username or password are invalid please try again");
+                setErrorMessage("Invalid username or password");
                 setColor("warning");
                 error_message_appear();
                 error_message_disappear();
                 break;
             case "new account created": 
-                setErrorMessage("Congrats! Your account has been created please login.");
+                setErrorMessage("Account created. Login to continue.");
                 setColor("success");
                 error_message_appear();
                 error_message_disappear();
@@ -97,10 +89,10 @@ const Login = (props) => {
 
                     <form  action="/login" method="POST">
                         <div className="form_group">
-                            <input className="input user_input" name="username" placeholder="Enter you username" />  
+                            <input className="input user_input" name="username" placeholder="Username" autoComplete="off" required />  
                         </div>
                         <div className="form_group">
-                            <input name="password" className="input password_input" type="password" placeholder="Enter you password" />
+                            <input name="password" className="input password_input" type="password" placeholder="Password" autoComplete="off" required />
                         </div>
                         <div className="form_group submit_form_group">
                             <input type="submit" placeholder="Submit" className="submit_button" />
@@ -109,7 +101,7 @@ const Login = (props) => {
                     
                 </div>
                 <div className="create_account_link">
-                    New? <Link className="form_back_button" to="/create-an-account">Click here to create an account.</Link>
+                    New? <Link className="form_back_button" to="/create-an-account">New here? Create An Account.</Link>
                 </div>
             </div>
 
