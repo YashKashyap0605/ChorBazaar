@@ -79,7 +79,7 @@ const AddProduct = () => {
                     
                         <div className="form_group">
                             {/* <label> Product Name: </label> */}
-                            <input name="image" size="60" className="file_input" type="file" />
+                            <input name="image"  className="file_input" type="file" />
                         </div>
                         <div className="form_group submit_group">
                             <input className="submit_button_add_product" type="submit" value="Submit" />
@@ -87,7 +87,7 @@ const AddProduct = () => {
                     </form>  
               </div>
             </div> 
-            <a style={{marginTop: '50px'}} href="#" > Go Back </a>
+            <a style={{marginTop: '50px'}} href="/" > Go Back </a>
         </div>
     )
 }
