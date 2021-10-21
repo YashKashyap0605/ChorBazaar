@@ -15,7 +15,7 @@ Bootstrap has been used to implement Navigation Bar and Made responsive using To
 
 Because of limited space of 512MB I have not allowed the images to appear in the all products section .
 
-I will also add the logout feature to the Site and many more.
+I will also add the logout feature talong with many other features. :) :)
 
 This project is open to PR's and Suggestions :)
 
