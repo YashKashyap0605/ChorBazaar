@@ -16,18 +16,18 @@ const AddProduct = () => {
     return (
         <div className="add_product_container">
             <div className="add_product_form_container" >
-                <h1 className="add_product_title"> Add Product </h1>
+                <h1 className="add_product_title"> Add a Product </h1>
               <div className="products_form">
                 <form method="POST" action="/admin/add-product" enctype="multipart/form-data" >
                         <div className="form_group">
                             {/* <label> Name: </label> */}
-                            <input className="add_products_input" type="text" name="product_name" placeholder="Product Name" />
+                            <input className="add_products_input" type="text" name="product_name" placeholder="Product Name" required />
                         </div>
                         <div className="form_group">
                             {/* <label> Category: </label> */}
                             <select name="cat_select" className="select_option_container add_products_input">
                                 <option value="null">
-                                    Please select a category
+                                    Select a Category
                                 </option>
                                 <option>
                                     Summer
@@ -64,17 +64,17 @@ const AddProduct = () => {
                         </div>
                         <div className="form_group">
                             {/* <label> Name: </label> */}
-                            <input type="text" name="product_tags" placeholder="Product Tags" className="add_products_input" />
+                            <input type="text" name="product_tags" placeholder="Product Tags" className="add_products_input" required/>
                         </div>
 
-                        <div className="form_group textarea_group">
+                        <div className="form_group textarea_group" required>
                             {/* <label> Product Name: </label> */}
                             <textarea name="desc" placeholder="Product Description" rows="5"  cols="38" />
                         </div>
                     
                         <div className="form_group">
                             {/* <label> Product Name: </label> */}
-                            <input name="product_price"  className="add_products_input" type="text" placeholder="Product Price" />
+                            <input name="product_price"  className="add_products_input" type="text" placeholder="Product Price" required />
                         </div>
                     
                         <div className="form_group">

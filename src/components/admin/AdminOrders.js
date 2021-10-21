@@ -37,22 +37,22 @@ const AdminOrders = () => {
                 <tbody>
                     <tr>
                     <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>Yash</td>
+                    <td>Kashyap</td>
+                    <td>@yash</td>
                     <td> <a href="#"> View Order </a> </td>
                     <td> <a href="#" > Delete Order </a> </td>
                     </tr>
                     <tr>
                     <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>MS</td>
+                    <td>Dhoni</td>
+                    <td>@msd</td>
 
                     </tr>
                     <tr>
                     <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
+                    <td colSpan="2">Leo</td>
                     <td>@twitter</td>
                     </tr>
                 </tbody>

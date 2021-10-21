@@ -45,7 +45,7 @@ const Coat = () => {
 
             console.log(res);
             if(res.data === "Sorry you have already added this item to cart") {
-                alert("Sorry you have already added this item to your cart");
+                alert("Item already added to cart!!!!");
             }
         })
     }

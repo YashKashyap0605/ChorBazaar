@@ -32,7 +32,7 @@ const Newsletter = () => {
         <Modal.Header closeButton>
           <Modal.Title> Congrats! </Modal.Title>
         </Modal.Header>
-        <Modal.Body>You have successfully subscribed to our newsletter!</Modal.Body>
+        <Modal.Body>Thank You for subscribing to out newsletter !!!!</Modal.Body>
         <Modal.Footer> 
           <Button variant="secondary" onClick={handleModalClose}>
             Close
@@ -43,7 +43,7 @@ const Newsletter = () => {
                 <div className="newsletter_container">
                     <h2> {res} </h2>
                     <h4>Sign up for our newsletter to receive special offers, new products and more!</h4>
-                    <input type="text" placeholder="Enter you email address" className="newsLetterInput" />
+                    <input type="text" placeholder="Email id " className="newsLetterInput" />
                     <ReButton onClick={handleClick} style={{width: '25%', backgroundColor: "#EEEDE9", color: "black", outline: "none"}}>Sign Up</ReButton>
                 </div>
             </div>

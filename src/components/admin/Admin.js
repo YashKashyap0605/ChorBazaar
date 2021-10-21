@@ -30,7 +30,7 @@ const Admin = () => {
     return (
         <Fragment>
         <div className="admin_main_container">
-            <h1> Welcome Admin </h1>
+            <h1> Welcome to the Admin Portal </h1>
             <div className="admin_card_container">
                 <Card linkAddress="/admin/users" count={usersCount} linkTitle="Manage Users" title="Users" style={{backgroundColor: "#8D5A97"}}  />
                 <Card linkAddress="/admin/products" count={productCount} linkTitle="Manage Products" title="Products" style={{backgroundColor: "#907F9F"}} />

@@ -18,16 +18,16 @@ const Create_An_Account = (props) => {
 
                 <form action="/create-an-account" method="POST">
                     <div className="form_group">
-                        <input className="input user_input" autoFocus required name="username" placeholder="Please select a username" />  
+                        <input className="input user_input" autoFocus required name="username" placeholder="Username" />  
                     </div>
                     <div className="form_group">
-                        <input name="password" required className="input password_input" type="password" placeholder="Please select a password" />
+                        <input name="password" required className="input password_input" type="password" placeholder="Password" />
                     </div>
                     <div className="form_group"> 
-                      <input name="email" type="email" className="input email_input" placeholder="Please enter your email" required  /> 
+                      <input name="email" type="email" className="input email_input" placeholder="Email" required  /> 
                     </div>
                     <div className="form_group"> 
-                      <input name="number" type="text" className="input number_input" placeholder="Please enter your number" required  /> 
+                      <input name="number" type="text" className="input number_input" placeholder="Number" required  /> 
                     </div>
                     <div className="form_group submit_form_group">
                         <input type="submit" placeholder="Submit" required className="submit_button" />

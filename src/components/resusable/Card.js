@@ -37,19 +37,13 @@ const styles = {
 
 const Card = (props) => {
 
-    // let background = `../../static/images/clothes/${props.image}`;
-    // import Background from  `../../static/images/clothes/${props.image}`;
-    // let background = path.join(__dirname, "static", 'images', 'clothes', props.image);
-
-    // let background = require(path.join(__dirname, "build", props.image));
-
     return(
             <div style={{...styles.Card, ...props.style}}>
                 {/* <div className="card_image_div" style={{ backgroundImage: `url(${ImageURL})`}} ></div> */}
                 <div style={styles.priceArea} >
                     <div>
                          <p className="card_product_name" style={{...styles.textWeight, ...styles.pTag}} >{props.productName}</p> 
-                        <p style={{fontWeight: "700"}}> Price: {"$"+props.price} </p>
+                        <p style={{fontWeight: "700"}}> Price: {"₹"+props.price} </p>
                     </div>
                     <div>
                         <p className="add_to_cart_button_container"> <Button onClick={props.onClick} style={{...styles.addToCartButton, ...props.buttonStyle}} > Add to cart </Button> </p>

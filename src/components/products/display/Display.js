@@ -74,7 +74,7 @@ const Display = (props) => {
             {/* SUCCESS MODAL */}
     <Modal show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
-            <Modal.Title> Item has been added to cart. </Modal.Title>
+            <Modal.Title> Item Successfully Added!!! </Modal.Title>
         </Modal.Header>
            
         <Modal.Footer> 

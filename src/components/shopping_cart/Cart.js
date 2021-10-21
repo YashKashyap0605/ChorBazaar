@@ -35,7 +35,6 @@ const Cart = () => {
     //State that grabs the final price from the database
     const [newCheckoutPrice, setNewCheckoutPrice] = useState(0);
     
-    //Function that gets called when user hovers mouse over the paypal button
     const updateFinalPriceFromDatabase = (finalPrice) => {
 
         console.log(finalPrice);
@@ -47,15 +46,6 @@ const Cart = () => {
         })
     }
   
-  //This function sums up the complete_final_price using the reduce method to give a 
-  //Final price
-    // const getReducedValue = () => {
-    //     let reduced_complete_final_price = complete_final_price.reduce((a,b) => {
-    //         return a + b;
-    //     })
-    // }
-    
-
 
     let item_ids = [];
     //Working solution for quantity update and final price
@@ -185,7 +175,7 @@ const Cart = () => {
         port: 465,
         secure: true,
         auth: {
-            user: "haseebkhan2651@gmail.com",
+            user: "yashkashyap0605@gmail.com",
             pass: "1969hskhsk"
         },
         tls: {
@@ -194,7 +184,7 @@ const Cart = () => {
     })
 
     let message = {
-        from: "haseebkhan2651@gmail.com",
+        from: "yashkashyap0605@gmail.com",
         to: userEmail,
         subject: "Order Confirmation",
         text: "Hello, This is just a message confirming your order with Hassons. Please note this is not an actual order confirmation, but just a demonstration",
@@ -252,7 +242,7 @@ const Cart = () => {
         <Modal.Header closeButton>
           <Modal.Title>Your payment has been successful!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Please note that this is only a sandbox paypal account for development purposes. This is not a real ecommerce store. Thank you I hope you enjoyed!</Modal.Body>
+        <Modal.Body>This is just  a project website. Do not expect any order to show up :)</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleModalClose}>
             Close
@@ -266,7 +256,7 @@ const Cart = () => {
     <Modal.Header closeButton>
         <Modal.Title>There has been an error with your payment please try again</Modal.Title>
     </Modal.Header>
-    <Modal.Body>Please note that this is only a sandbox paypal account for development purposes. This is not a real ecommerce store. Thank you I hope you enjoyed!</Modal.Body>
+    <Modal.Body>This is just  a project website. Do not expect any order to show up :)</Modal.Body>
     <Modal.Footer>
         <Button variant="secondary" onClick={() => {setShowErrorModal(false)}}>
         Close
@@ -274,7 +264,7 @@ const Cart = () => {
     </Modal.Footer>
     </Modal>
             <Nav />
-            <marquee>                <p> Please note that this is not a real eCommerce store this is a demonstration for development purposes. I hope you enjoyed this application! </p> </marquee>
+            <marquee>                <p> This is just  a project website. Do not expect any order to show up :) </p> </marquee>
            <div className="shopping_cart_main_container">
 
                <div className="shopping_cart_part_one">

@@ -9,8 +9,8 @@ const Button = (props) => {
             outline: "none",
             padding: '15px',
             borderRadius: '10px',
-            backgroundColor: "#503047",
-            color: "white"
+            backgroundColor: "#0A1931",
+            color: "aliceblue"
         }
     }
 

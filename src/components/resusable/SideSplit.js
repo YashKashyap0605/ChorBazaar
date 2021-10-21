@@ -16,9 +16,9 @@ const SideSplit = (props) => {
             <div className="sideSplit_image_div"></div>
             <div className="sideSplit_text_container">
                 <div className="sideSplit_text">
-                    <h1 class="sideSplit_message_part_one"> Check out our Summer Styles </h1>
+                    <h1 class="sideSplit_message_part_one"> Have a look on the Summer Styles </h1>
                     
-                    <Button onClick={linkChange.bind(this, "/products")} > Shop Now </Button>
+                    <Button onClick={linkChange.bind(this, "/products")} > Shop Now!!! </Button>
                 </div>
             </div>
         </div>

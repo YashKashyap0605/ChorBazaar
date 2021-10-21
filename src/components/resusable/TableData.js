@@ -2,9 +2,7 @@ import React from "react";
 
 
 const TableData = () => {
-    return (
-        
-    )
+    return
 }
 
 export default TableData;

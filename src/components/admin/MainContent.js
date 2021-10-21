@@ -15,7 +15,7 @@ const MainContent = () => {
 
     return (
         <div className="main_admin_content_container">
-            Hwello
+            Hello
         </div>
     )
 }

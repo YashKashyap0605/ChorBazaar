@@ -59,7 +59,7 @@ const Content = () => {
                     <a href="/products" > Shop Products </a>
                 </div>
             </div>
-            <div className="back_button"> <p> <a href="/"> &#60;- Go Back </a> </p> </div>
+            <div className="back_button"> <p> <a href="/"> &#60;- Back To Home </a> </p> </div>
             
         </div>
     )

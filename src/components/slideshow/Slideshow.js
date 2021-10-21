@@ -12,8 +12,8 @@ const Slideshow = () => {
     return (
         <div className="header_container">
             <div className="header_text_container">
-                <h1>Hassons</h1>
-                <Button onClick={linkChange} > SHOP OUR PRODUCTS </Button>
+                <h1>ChorBazaar</h1>
+                <Button onClick={linkChange} >LET'S GO SHOPPING  </Button>
             </div>
         </div>
     );

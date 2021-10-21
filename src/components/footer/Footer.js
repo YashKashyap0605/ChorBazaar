@@ -11,6 +11,7 @@ const Footer = () => {
                     <ul className="first_footer_list">
                         <a href="/"> <li> Home </li> </a>
                         <a href="/products"> <li> Products </li>  </a>
+                        <a href="/padmin"> <li> Admin </li>  </a>
                     </ul>
                 </div>
             </div>
